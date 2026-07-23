@@ -1,0 +1,47 @@
+{
+  "template": "hearth",
+  "license": "Unsplash License",
+  "generatedAt": "2026-07-01T03:08:42.894Z",
+  "photos": [
+    {
+      "file": "lobby-01.jpg",
+      "photographer": "Steven Van Elk",
+      "photographerUrl": "https://unsplash.com/@stevenvanelk?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-room-with-a-checkered-floor-and-a-bar-1CcryZiF2PA?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "1CcryZiF2PA",
+      "alt": "Lobby seating"
+    },
+    {
+      "file": "breakfast-01.jpg",
+      "photographer": "Iason Raissis",
+      "photographerUrl": "https://unsplash.com/@jay_raissis?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-white-table-topped-with-plates-of-fruit-and-pastries-jLxPs1kBmZI?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "jLxPs1kBmZI",
+      "alt": "Breakfast spread"
+    },
+    {
+      "file": "detail-01.jpg",
+      "photographer": "Le Thanh Huyen",
+      "photographerUrl": "https://unsplash.com/@ltheritage?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-close-up-of-a-tiled-floor-with-black-and-white-designs-6Uf8DEhR6Og?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "6Uf8DEhR6Og",
+      "alt": "Original tilework"
+    },
+    {
+      "file": "courtyard-01.jpg",
+      "photographer": "Antonio Araujo",
+      "photographerUrl": "https://unsplash.com/@antonioaaaraujo?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/aerial-view-of-a-hotel-courtyard-with-pool-and-umbrellas-BD6-t8CyXUs?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "BD6-t8CyXUs",
+      "alt": "Courtyard"
+    },
+    {
+      "file": "view-01.jpg",
+      "photographer": "Tom Jur",
+      "photographerUrl": "https://unsplash.com/@tomjur?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-view-of-a-mountain-range-from-a-window-VPeJX1xtMdM?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "VPeJX1xtMdM",
+      "alt": "View from a guest room"
+    }
+  ]
+}
