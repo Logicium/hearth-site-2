@@ -1,4 +1,4 @@
-import type { ThemeName, SwatchName, SiteVariant } from '../themes/tokens'
+import type { ThemeName, SwatchName, SiteVariant } from '@apotome/archetype-shared/themes/tokens'
 
 export interface PhotoSlot { src: string; alt?: string; caption?: string }
 
@@ -36,7 +36,9 @@ export interface HearthSiteConfig {
   social: Array<{ label: string; href: string }>
 }
 
-export const siteConfig: HearthSiteConfig = {
+import { reactive } from 'vue'
+
+export const siteConfig: HearthSiteConfig = reactive(({
   brand: 'Hearth Inn',
   tagline: 'A small hotel in Trinidad',
   blurb: 'Eight rooms in a restored 1903 brick building, two blocks from Main Street.',
@@ -49,7 +51,9 @@ export const siteConfig: HearthSiteConfig = {
     email: 'stay@hearthinn.com',
     mapEmbedUrl: 'https://www.google.com/maps?q=Trinidad,CO&output=embed',
   },
-  bookingUrl: 'https://example.com/book',
+  // Internal booking page — the built-in reservations system (lodging add-on).
+  // Set to an https:// URL only if this site books through an external partner.
+  bookingUrl: '/book',
   photos: {
     hero: { src: '/photos/hero.jpg', alt: 'Hearth Inn façade at dusk' },
     about: { src: '/photos/about-lobby.jpg', alt: 'Lobby with fireplace' },
@@ -86,7 +90,7 @@ export const siteConfig: HearthSiteConfig = {
       image: '/photos/room-suite.jpg',
       features: ['King bed', 'Sleeps 4', 'Soaking tub', 'Sitting room', '500 sq ft'],
       rateFrom: '$245',
-      bookUrl: 'https://example.com/book/suite',
+      bookUrl: '/book',
     },
     {
       name: 'King Room',
@@ -94,7 +98,7 @@ export const siteConfig: HearthSiteConfig = {
       image: '/photos/room-king.jpg',
       features: ['King bed', 'Sleeps 2', 'Walk-in shower', '300 sq ft'],
       rateFrom: '$175',
-      bookUrl: 'https://example.com/book/king',
+      bookUrl: '/book',
     },
     {
       name: 'Queen Room',
@@ -102,7 +106,7 @@ export const siteConfig: HearthSiteConfig = {
       image: '/photos/room-queen.jpg',
       features: ['Queen bed', 'Sleeps 2', 'Garden view', '240 sq ft'],
       rateFrom: '$145',
-      bookUrl: 'https://example.com/book/queen',
+      bookUrl: '/book',
     },
   ],
   amenities: [
@@ -122,4 +126,4 @@ export const siteConfig: HearthSiteConfig = {
     { label: 'Instagram', href: 'https://instagram.com' },
     { label: 'Facebook', href: 'https://facebook.com' },
   ],
-}
+}))
