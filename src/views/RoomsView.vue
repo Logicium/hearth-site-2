@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { siteConfig } from '../config/site.config'
-import HeroSection from '../components/sections/HeroSection.vue'
+import HeroSection from '@apotome/archetype-shared/components/sections/HeroSection.vue'
 import RoomsSection from '../components/sections/RoomsSection.vue'
 import AmenitiesSection from '../components/sections/AmenitiesSection.vue'
 </script>
