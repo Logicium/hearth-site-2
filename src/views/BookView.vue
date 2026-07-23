@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { siteConfig } from '../config/site.config'
-import HeroSection from '../components/sections/HeroSection.vue'
+import HeroSection from '@apotome/archetype-shared/components/sections/HeroSection.vue'
+import LodgingBookingSection from '@apotome/archetype-shared/components/sections/LodgingBookingSection.vue'
 import ContactSection from '../components/sections/ContactSection.vue'
+import { useSiteContentStore } from '@apotome/archetype-shared/platform/siteContentStore'
+
+const store = useSiteContentStore()
+const showLodging = computed(() => store.hasAddOn('lodging'))
+/** Only show the external-booking fallback for a real external URL —
+    internal paths would just loop back to this page. */
+const externalBookingUrl = computed(() =>
+  /^https?:\/\//.test(siteConfig.bookingUrl || '') ? siteConfig.bookingUrl : null,
+)
 </script>
 
 <template>
@@ -13,9 +24,18 @@ import ContactSection from '../components/sections/ContactSection.vue'
     :image="siteConfig.photos.about.src"
     :image-alt="siteConfig.photos.about.alt"
   />
-  <div class="ap-container" style="padding-top: 2rem; text-align: center;">
-    <a :href="siteConfig.bookingUrl" class="ap-btn" target="_blank" rel="noopener">Open booking site</a>
+
+  <LodgingBookingSection
+    v-if="showLodging"
+    eyebrow="Reserve"
+    title="Pick your dates"
+    intro="Choose your nights and party size — we'll show you what's available."
+  />
+
+  <div v-else-if="externalBookingUrl" class="ap-container" style="padding-top: 2rem; text-align: center;">
+    <a :href="externalBookingUrl" class="ap-btn" target="_blank" rel="noopener">Open booking site</a>
   </div>
+
   <ContactSection
     title="Or just send us a note"
     :address="siteConfig.contact.address"
