@@ -43,7 +43,7 @@ export const siteConfig: HearthSiteConfig = reactive(({
   tagline: 'A small hotel in Trinidad',
   blurb: 'Eight rooms in a restored 1903 brick building, two blocks from Main Street.',
   theme: 'heritage',
-  swatch: 'forest',
+  swatch: 'pine-light',
   variant: 'essentials',
   contact: {
     address: '212 Commercial St, Trinidad, CO 81082',

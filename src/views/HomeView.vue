@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { siteConfig } from '../config/site.config'
-import { VARIANT_PHOTO_COUNT, variantAtLeast } from '@apotome/archetype-shared/themes/tokens'
+import { VARIANT_PHOTO_COUNT, resolveVariant, variantAtLeast } from '@apotome/archetype-shared/themes/tokens'
 import { useSiteContentStore } from '@apotome/archetype-shared/platform/siteContentStore'
+import { useSiteTheme } from '@apotome/archetype-shared/composables/useSiteTheme'
 import HeroSection from '@apotome/archetype-shared/components/sections/HeroSection.vue'
 import AboutSection from '@apotome/archetype-shared/components/sections/AboutSection.vue'
 import RoomsSection from '../components/sections/RoomsSection.vue'
@@ -10,8 +11,9 @@ import AmenitiesSection from '../components/sections/AmenitiesSection.vue'
 import GallerySection from '@apotome/archetype-shared/components/sections/GallerySection.vue'
 import TestimonialsSection from '@apotome/archetype-shared/components/sections/TestimonialsSection.vue'
 
-const galleryLimit = computed(() => VARIANT_PHOTO_COUNT[siteConfig.variant].gallery)
-const isPortfolio = computed(() => variantAtLeast(siteConfig.variant, 'portfolio'))
+const { variant: liveVariant } = useSiteTheme()
+const galleryLimit = computed(() => VARIANT_PHOTO_COUNT[resolveVariant(liveVariant.value)].gallery)
+const isPortfolio = computed(() => variantAtLeast(liveVariant.value, 'portfolio'))
 const content = useSiteContentStore()
 const reviewItems = computed(() =>
   content.reviewsSource === 'google' && content.googleReviews.length
@@ -27,6 +29,7 @@ const reviewItems = computed(() =>
     :subtitle="siteConfig.blurb"
     :image="siteConfig.photos.hero.src"
     :image-alt="siteConfig.photos.hero.alt"
+    :images="isPortfolio ? [siteConfig.photos.hero, ...siteConfig.photos.gallery.slice(0, 3)] : []"
     :cta-primary="{ label: 'Book a room', to: '/book' }"
     :cta-secondary="{ label: 'See rooms', to: '/rooms' }"
     :layout="isPortfolio ? 'stage' : 'split'"
