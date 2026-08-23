@@ -7,11 +7,11 @@ const iconMap: Record<string, unknown> = {
 
 interface Amenity { label: string; description?: string; icon?: string }
 
-defineProps<{
+withDefaults(defineProps<{
   eyebrow?: string
   title?: string
   amenities: Amenity[]
-}>()
+}>(), { title: 'Everything you need' })
 </script>
 
 <!--
@@ -28,7 +28,7 @@ defineProps<{
     <div class="ap-container">
       <div class="ap-section-head">
         <span v-if="eyebrow" class="ap-eyebrow">{{ eyebrow }}</span>
-        <h2>{{ title || 'Everything you need' }}</h2>
+        <h2>{{ title }}</h2>
       </div>
 
       <!-- ── Style 1 · Ledger ── -->

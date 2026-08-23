@@ -12,12 +12,16 @@ interface Room {
 import { RouterLink } from 'vue-router'
 import OptimizedImage from '@apotome/archetype-shared/components/OptimizedImage.vue'
 
-defineProps<{
+withDefaults(defineProps<{
   eyebrow?: string
   title?: string
   intro?: string
   rooms: Room[]
-}>()
+  /** Prefix before a room's nightly rate, e.g. "From $120". Owner-editable. */
+  rateFromLabel?: string
+  /** Booking button label on each room card. Owner-editable. */
+  ctaLabel?: string
+}>(), { title: 'Where you’ll stay', rateFromLabel: 'From', ctaLabel: 'Reserve' })
 
 /** Reserve goes to the internal booking page unless the room explicitly
     points at an external system. */
@@ -31,7 +35,7 @@ function isExternal(url?: string): boolean {
     <div class="ap-container">
       <div class="ap-section-head">
         <span v-if="eyebrow" class="ap-eyebrow">{{ eyebrow }}</span>
-        <h2>{{ title || 'Where you’ll stay' }}</h2>
+        <h2>{{ title }}</h2>
         <p v-if="intro" style="color: var(--ap-ink-muted)">{{ intro }}</p>
       </div>
 
@@ -48,11 +52,11 @@ function isExternal(url?: string): boolean {
             </ul>
             <div class="ap-rooms__foot">
               <span v-if="r.rateFrom" class="ap-rooms__rate">
-                <small>From</small>
+                <small>{{ rateFromLabel }}</small>
                 <strong>{{ r.rateFrom }}</strong>
               </span>
-              <a v-if="isExternal(r.bookUrl)" :href="r.bookUrl" class="ap-btn" target="_blank" rel="noopener">Reserve</a>
-              <RouterLink v-else :to="r.bookUrl || '/book'" class="ap-btn">Reserve</RouterLink>
+              <a v-if="isExternal(r.bookUrl)" :href="r.bookUrl" class="ap-btn" target="_blank" rel="noopener">{{ ctaLabel }}</a>
+              <RouterLink v-else :to="r.bookUrl || '/book'" class="ap-btn">{{ ctaLabel }}</RouterLink>
             </div>
           </div>
         </article>

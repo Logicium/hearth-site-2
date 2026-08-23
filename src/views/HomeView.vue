@@ -30,12 +30,12 @@ const reviewItems = computed(() =>
     :image="siteConfig.photos.hero.src"
     :image-alt="siteConfig.photos.hero.alt"
     :images="isPortfolio ? [siteConfig.photos.hero, ...siteConfig.photos.gallery.slice(0, 3)] : []"
-    :cta-primary="{ label: 'Book a room', to: '/book' }"
-    :cta-secondary="{ label: 'See rooms', to: '/rooms' }"
+    :cta-primary="{ label: siteConfig.sections.hero.ctaPrimary, to: '/book' }"
+    :cta-secondary="{ label: siteConfig.sections.hero.ctaSecondary, to: '/rooms' }"
     :layout="isPortfolio ? 'stage' : 'split'"
   />
   <AboutSection
-    eyebrow="The inn"
+    :eyebrow="siteConfig.sections.story.eyebrow"
     :title="siteConfig.story.title"
     :paragraphs="siteConfig.story.paragraphs"
     :facts="siteConfig.story.facts"
@@ -43,22 +43,26 @@ const reviewItems = computed(() =>
     :image-alt="siteConfig.photos.about.alt"
   />
   <RoomsSection
-    eyebrow="Rooms"
-    title="Eight rooms, every one different"
+    :eyebrow="siteConfig.sections.rooms.eyebrow"
+    :title="siteConfig.sections.rooms.title"
+    :rate-from-label="siteConfig.sections.rooms.rateFromLabel"
+    :cta-label="siteConfig.sections.rooms.ctaLabel"
     :rooms="siteConfig.rooms.slice(0, isPortfolio ? 4 : 3)"
   />
   <AmenitiesSection
-    eyebrow="Stay"
+    :eyebrow="siteConfig.sections.amenities.eyebrow"
+    :title="siteConfig.sections.amenities.title"
     :amenities="siteConfig.amenities"
   />
   <GallerySection
-    eyebrow="A look around"
+    :eyebrow="siteConfig.sections.gallery.eyebrow"
     :photos="siteConfig.photos.gallery"
     :limit="galleryLimit"
     :layout="isPortfolio ? 'masonry' : 'grid'"
   />
   <TestimonialsSection
-    eyebrow="From past guests"
+    :eyebrow="siteConfig.sections.reviews.eyebrow"
+    :title="siteConfig.sections.reviews.title"
     :items="reviewItems"
   />
 </template>

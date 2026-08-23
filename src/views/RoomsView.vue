@@ -8,12 +8,17 @@ import AmenitiesSection from '../components/sections/AmenitiesSection.vue'
 <template>
   <HeroSection
     subpage
-    eyebrow="Rooms"
-    title="Pick your room"
-    subtitle="Every room has a king or queen bed, fast Wi-Fi, blackout curtains, and a hot shower."
+    :eyebrow="siteConfig.sections.roomsPage.eyebrow"
+    :title="siteConfig.sections.roomsPage.title"
+    :subtitle="siteConfig.sections.roomsPage.subtitle"
     :image="siteConfig.photos.hero.src"
     :image-alt="siteConfig.photos.hero.alt"
   />
-  <RoomsSection :rooms="siteConfig.rooms" />
-  <AmenitiesSection title="What is included" :amenities="siteConfig.amenities" />
+  <RoomsSection
+    :rooms="siteConfig.rooms"
+    :title="siteConfig.sections.rooms.title"
+    :rate-from-label="siteConfig.sections.rooms.rateFromLabel"
+    :cta-label="siteConfig.sections.rooms.ctaLabel"
+  />
+  <AmenitiesSection :title="siteConfig.sections.roomsPage.amenitiesTitle" :amenities="siteConfig.amenities" />
 </template>

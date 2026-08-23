@@ -34,6 +34,22 @@ export interface HearthSiteConfig {
   testimonials: Array<{ quote: string; author: string; source?: string }>
   bookingUrl: string
   social: Array<{ label: string; href: string }>
+  /** Editable section headers (eyebrows / titles / notes / CTA labels) so
+   *  owners control every heading on the site, not just body copy. */
+  sections: {
+    nav: { home: string; rooms: string; book: string; gallery: string; ctaLabel: string }
+    hero: { ctaPrimary: string; ctaSecondary: string }
+    story: { eyebrow: string }
+    rooms: { eyebrow: string; title: string; rateFromLabel: string; ctaLabel: string }
+    amenities: { eyebrow: string; title: string }
+    gallery: { eyebrow: string }
+    reviews: { eyebrow: string; title: string }
+    roomsPage: { eyebrow: string; title: string; subtitle: string; amenitiesTitle: string }
+    bookPage: { eyebrow: string; title: string; subtitle: string; externalCtaLabel: string }
+    lodging: { eyebrow: string; title: string; intro: string }
+    galleryPage: { eyebrow: string; title: string }
+    contact: { title: string }
+  }
 }
 
 import { reactive } from 'vue'
@@ -126,4 +142,32 @@ export const siteConfig: HearthSiteConfig = reactive(({
     { label: 'Instagram', href: 'https://instagram.com' },
     { label: 'Facebook', href: 'https://facebook.com' },
   ],
+  sections: {
+    nav: { home: 'Home', rooms: 'Rooms', book: 'Book', gallery: 'Gallery', ctaLabel: 'Book' },
+    hero: { ctaPrimary: 'Book a room', ctaSecondary: 'See rooms' },
+    story: { eyebrow: 'The inn' },
+    rooms: { eyebrow: 'Rooms', title: 'Eight rooms, every one different', rateFromLabel: 'From', ctaLabel: 'Reserve' },
+    amenities: { eyebrow: 'Stay', title: 'Everything you need' },
+    gallery: { eyebrow: 'A look around' },
+    reviews: { eyebrow: 'From past guests', title: 'What our guests say' },
+    roomsPage: {
+      eyebrow: 'Rooms',
+      title: 'Pick your room',
+      subtitle: 'Every room has a king or queen bed, fast Wi-Fi, blackout curtains, and a hot shower.',
+      amenitiesTitle: 'What is included',
+    },
+    bookPage: {
+      eyebrow: 'Reserve',
+      title: 'Book your stay',
+      subtitle: 'Use our booking partner for instant confirmation, or send us a note and we will reply the same day.',
+      externalCtaLabel: 'Open booking site',
+    },
+    lodging: {
+      eyebrow: 'Reserve',
+      title: 'Pick your dates',
+      intro: 'Choose your nights and party size \u2014 we\u2019ll show you what\u2019s available.',
+    },
+    galleryPage: { eyebrow: 'Gallery', title: 'The inn, room by room' },
+    contact: { title: 'Or just send us a note' },
+  },
 }))

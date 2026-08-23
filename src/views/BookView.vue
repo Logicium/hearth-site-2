@@ -18,26 +18,26 @@ const externalBookingUrl = computed(() =>
 <template>
   <HeroSection
     subpage
-    eyebrow="Reserve"
-    title="Book your stay"
-    subtitle="Use our booking partner for instant confirmation, or send us a note and we will reply the same day."
+    :eyebrow="siteConfig.sections.bookPage.eyebrow"
+    :title="siteConfig.sections.bookPage.title"
+    :subtitle="siteConfig.sections.bookPage.subtitle"
     :image="siteConfig.photos.about.src"
     :image-alt="siteConfig.photos.about.alt"
   />
 
   <LodgingBookingSection
     v-if="showLodging"
-    eyebrow="Reserve"
-    title="Pick your dates"
-    intro="Choose your nights and party size — we'll show you what's available."
+    :eyebrow="siteConfig.sections.lodging.eyebrow"
+    :title="siteConfig.sections.lodging.title"
+    :intro="siteConfig.sections.lodging.intro"
   />
 
   <div v-else-if="externalBookingUrl" class="ap-container" style="padding-top: 2rem; text-align: center;">
-    <a :href="externalBookingUrl" class="ap-btn" target="_blank" rel="noopener">Open booking site</a>
+    <a :href="externalBookingUrl" class="ap-btn" target="_blank" rel="noopener">{{ siteConfig.sections.bookPage.externalCtaLabel }}</a>
   </div>
 
   <ContactSection
-    title="Or just send us a note"
+    :title="siteConfig.sections.contact.title"
     :address="siteConfig.contact.address"
     :phone="siteConfig.contact.phone"
     :email="siteConfig.contact.email"
