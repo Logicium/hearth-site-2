@@ -31,17 +31,18 @@ function isExternal(url?: string): boolean {
 </script>
 
 <template>
-  <section class="ap-section ap-rooms">
+  <section class="ap-section ap-rooms" data-index>
     <div class="ap-container">
       <div class="ap-section-head">
         <span v-if="eyebrow" class="ap-eyebrow">{{ eyebrow }}</span>
-        <h2>{{ title }}</h2>
+        <h2 v-lines>{{ title }}</h2>
         <p v-if="intro" style="color: var(--ap-ink-muted)">{{ intro }}</p>
       </div>
 
-      <div class="ap-rooms__list">
-        <article v-for="(r, i) in rooms" :key="r.name" class="ap-rooms__row" :class="{ 'is-flip': i % 2 === 1 }">
-          <div class="ap-rooms__media">
+      <div class="ap-rooms__list" v-cascade="110">
+        <article v-for="(r, i) in rooms" :key="r.name" class="ap-rooms__row">
+          <span class="ap-rooms__num" aria-hidden="true">{{ String(i + 1).padStart(2, '0') }}</span>
+          <div class="ap-rooms__media" v-grow>
             <OptimizedImage :src="r.image" :alt="r.imageAlt || r.name" />
           </div>
           <div class="ap-rooms__body">
@@ -66,15 +67,18 @@ function isExternal(url?: string): boolean {
 </template>
 
 <style scoped>
-.ap-rooms__list { display: grid; gap: clamp(2rem, 4vw, 3.5rem); }
+/* A folio, not a seesaw: every room is a numbered entry with the photo on
+   the same side, so the page reads as an index rather than alternating bands. */
+.ap-rooms__list { display: grid; gap: 0; border-top: 1px solid var(--ap-line); }
 .ap-rooms__row {
-  display: grid; gap: clamp(1.5rem, 3vw, 2.5rem);
-  grid-template-columns: 6fr 5fr; align-items: center;
+  display: grid; gap: clamp(1.25rem, 3vw, 2.5rem);
+  grid-template-columns: 3rem minmax(220px, 0.62fr) minmax(0, 1.38fr); align-items: start;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  border-bottom: 1px solid var(--ap-line);
 }
-.ap-rooms__row.is-flip { grid-template-columns: 5fr 6fr; }
-.ap-rooms__row.is-flip .ap-rooms__media { order: 2; }
+.ap-rooms__num { font-family: var(--ap-font-mono); font-size: 0.66rem; letter-spacing: 0.2em; color: var(--ap-ink-muted); padding-top: 0.4rem; }
 .ap-rooms__media img {
-  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  width: 100%; aspect-ratio: 4 / 3; max-height: 360px; object-fit: cover;
   border-radius: var(--ap-radius-lg);
 }
 .ap-rooms__features {
@@ -94,7 +98,7 @@ function isExternal(url?: string): boolean {
 .ap-rooms__rate small { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ap-ink-muted); }
 .ap-rooms__rate strong { font-family: var(--ap-font-heading); font-size: 1.5rem; }
 @media (max-width: 820px) {
-  .ap-rooms__row, .ap-rooms__row.is-flip { grid-template-columns: 1fr; }
-  .ap-rooms__row.is-flip .ap-rooms__media { order: -1; }
+  .ap-rooms__row { grid-template-columns: 1fr; }
+  .ap-rooms__num { display: none; }
 }
 </style>

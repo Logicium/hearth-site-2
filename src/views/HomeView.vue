@@ -15,6 +15,15 @@ const { variant: liveVariant } = useSiteTheme()
 const galleryLimit = computed(() => VARIANT_PHOTO_COUNT[resolveVariant(liveVariant.value)].gallery)
 const isPortfolio = computed(() => variantAtLeast(liveVariant.value, 'portfolio'))
 const content = useSiteContentStore()
+
+/** Hero ledger: tagline, town, rooms. */
+const heroMeta = computed(() => {
+  const city = siteConfig.contact.address.split(',').slice(1, 3).map(s => s.trim()).join(', ')
+  const items: Array<{ label: string; value?: string }> = [{ label: siteConfig.tagline }]
+  if (city) items.push({ label: city })
+  items.push({ label: 'Rooms', value: String(siteConfig.rooms.length) })
+  return items
+})
 const reviewItems = computed(() =>
   content.reviewsSource === 'google' && content.googleReviews.length
     ? content.googleReviews
@@ -30,6 +39,7 @@ const reviewItems = computed(() =>
     :image="siteConfig.photos.hero.src"
     :image-alt="siteConfig.photos.hero.alt"
     :images="isPortfolio ? [siteConfig.photos.hero, ...siteConfig.photos.gallery.slice(0, 3)] : []"
+    :meta="heroMeta"
     :cta-primary="{ label: siteConfig.sections.hero.ctaPrimary, to: '/book' }"
     :cta-secondary="{ label: siteConfig.sections.hero.ctaSecondary, to: '/rooms' }"
     :layout="isPortfolio ? 'stage' : 'split'"

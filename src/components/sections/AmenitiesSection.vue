@@ -24,11 +24,11 @@ withDefaults(defineProps<{
     5 · Medallion — radial grid of circular icon medallions on a tinted band
 -->
 <template>
-  <section class="ap-section ap-section--alt ap-amenities">
+  <section class="ap-section ap-section--alt ap-amenities" data-index>
     <div class="ap-container">
       <div class="ap-section-head">
         <span v-if="eyebrow" class="ap-eyebrow">{{ eyebrow }}</span>
-        <h2>{{ title }}</h2>
+        <h2 v-lines>{{ title }}</h2>
       </div>
 
       <!-- ── Style 1 · Ledger ── -->

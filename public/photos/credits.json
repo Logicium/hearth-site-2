@@ -1,8 +1,88 @@
 {
   "template": "hearth",
   "license": "Unsplash License",
-  "generatedAt": "2026-07-01T03:08:42.894Z",
+  "generatedAt": "2026-09-22T04:03:06.840Z",
   "photos": [
+    {
+      "file": "gallery-07.jpg",
+      "photographer": "Margo Evardson",
+      "photographerUrl": "https://unsplash.com/@stadinstudio?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/woman-in-white-dress-sits-on-a-bed-23GoNP_XFRI?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "23GoNP_XFRI",
+      "alt": "Morning light in the King room"
+    },
+    {
+      "file": "gallery-08.jpg",
+      "photographer": "Tony Yakovlenko",
+      "photographerUrl": "https://unsplash.com/@tonyyakovlenko?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/empty-building-pathway-lDxxeAJrWpE?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "lDxxeAJrWpE",
+      "alt": "Second-floor hallway"
+    },
+    {
+      "file": "gallery-09.jpg",
+      "photographer": "Vije Vijendranath",
+      "photographerUrl": "https://unsplash.com/@vijev?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-living-room-filled-with-furniture-and-a-fire-place-cQeZDBoQrgs?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "cQeZDBoQrgs",
+      "alt": "The lounge fire"
+    },
+    {
+      "file": "gallery-10.jpg",
+      "photographer": "chris robert",
+      "photographerUrl": "https://unsplash.com/@chris_robert?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-street-light-on-the-side-of-a-brick-building-EbH942aq4UE?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "EbH942aq4UE",
+      "alt": "The 1903 brick front"
+    },
+    {
+      "file": "gallery-11.jpg",
+      "photographer": "Travis",
+      "photographerUrl": "https://unsplash.com/@tvieso?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-close-up-of-a-coffee-maker-on-a-counter-Vf1Lh3ciPxU?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "Vf1Lh3ciPxU",
+      "alt": "Coffee at six"
+    },
+    {
+      "file": "gallery-12.jpg",
+      "photographer": "Illumination Marketing",
+      "photographerUrl": "https://unsplash.com/@illuminationmarketing?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-bathroom-with-a-bathtub-sink-and-mirror-LbLSqPbnjRw?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "LbLSqPbnjRw",
+      "alt": "Suite bath"
+    },
+    {
+      "file": "gallery-13.jpg",
+      "photographer": "Volodymyr Grytsiuk",
+      "photographerUrl": "https://unsplash.com/@vgryts_86?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/pedestrian-street-with-shops-and-buildings-in-a-mountain-town-NgygA_D2vLo?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "NgygA_D2vLo",
+      "alt": "Two blocks to Main Street"
+    },
+    {
+      "file": "gallery-14.jpg",
+      "photographer": "Susan Wilkinson",
+      "photographerUrl": "https://unsplash.com/@susan_wilkinson?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/white-bed-linen-near-green-plant-gSOdp7YlgNQ?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "gSOdp7YlgNQ",
+      "alt": "Linen, pressed"
+    },
+    {
+      "file": "gallery-15.jpg",
+      "photographer": "Clay Banks",
+      "photographerUrl": "https://unsplash.com/@claybanks?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/a-room-with-a-chair-a-table-and-a-window-xHcNz_9WkEE?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "xHcNz_9WkEE",
+      "alt": "Reading nook"
+    },
+    {
+      "file": "gallery-16.jpg",
+      "photographer": "David Glessner | Photographer & Director",
+      "photographerUrl": "https://unsplash.com/@davidglessnerworks?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "photoUrl": "https://unsplash.com/photos/silhouette-of-mountains-during-sunset-denfmRxGyTM?utm_source=Apotome%20Archetypes&utm_medium=referral",
+      "unsplashId": "denfmRxGyTM",
+      "alt": "Fishers Peak at dusk"
+    },
     {
       "file": "lobby-01.jpg",
       "photographer": "Steven Van Elk",
